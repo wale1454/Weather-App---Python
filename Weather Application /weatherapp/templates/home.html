@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+{% load static %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application page</title>
+
+</head>
+<body>
+
+
+    <div class="header">
+		<p> Weather Application </p>
+	</div>
+    
+    <br>
+
+
+<!-- <div>
+    <form action="/newurl/" method="post" class="forms" > {% csrf_token %}
+
+        <input type="text" name="userinput1" placeholder="Enter a City Name" class="textbox" >
+        <input type="submit" value="Search">
+    </form>
+</div> -->
+
+
+<div class="search_wrap search_wrap_3" >
+
+    <form action="/newurl/" method="post" class="search_box" > {% csrf_token %}
+
+        <input type="text" name="userinput1" placeholder="Enter a City Name" class="input" >
+ 
+        <input type="submit" value="Go" class="btn btn_common "  >
+
+
+    </form>
+</div>
+
+
+<br>
+
+<div class="intro" > <b> Here are the weather stats in {{City}} </b>  </div>
+
+<br>
+<br>
+
+<div class="bigbox" >
+
+    <h2> Temperature in {{City}} is {{Temp}} degree Celcius  </h2>
+
+    <br>
+
+    <h3>  Country: {{Country}} </h3>
+
+    <br>
+
+    <h3>  Weather Forecast Description: {{Description}} </h3>
+
+    <br>
+
+    <h3> Humidity : {{humidity}} </h3>
+
+    <br>
+
+    <h3> 
+    <img src="http://openweathermap.org/img/w/{{Icon}}.png" alt="Image" style="width:70px"></h3>
+
+   
+
+
+</div>
+
+
+
+
+
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* font-family: 'Noto Sans KR', sans-serif; */
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .intro {
+        text-align: center;
+        background-color: #fff;
+        padding: 10px;
+
+        border-radius: 85px;
+    }
+    
+    .bigbox{
+        text-align: center;
+    }
+
+    .header{
+        width: 1000px;
+        padding: 20px;
+        background: #7690da;
+        margin: 25px auto;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .header p{
+        font-size: 40px;
+        text-transform: capitalize;
+        font-weight: 700;
+        color: rgb(255, 255, 255);
+    }
+
+
+body{
+	background: #ffda70;
+}
+
+.container .input{
+	border: 0;
+	outline: none;
+	color: #8b7d77;
+}
+
+.search_wrap{
+	width: 500px;
+	margin: 38px auto;
+}
+
+.search_wrap .search_box{
+	position: relative;
+	width: 500px;
+	height: 60px;
+}
+
+.search_wrap .search_box .input{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 10px 20px;
+	border-radius: 3px;
+	font-size: 18px;
+}
+
+.search_wrap .search_box .btn{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60px;
+	height: 100%;
+	background: #7690da;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.search_wrap .search_box .btn:hover{
+	background: #708bd2;	
+}
+
+.search_wrap .search_box .btn.btn_common .fas{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: #fff;
+	font-size: 20px;
+}
+
+.search_wrap.search_wrap_1 .search_box .btn{
+	right: 0;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+.search_wrap.search_wrap_1 .search_box .input,
+.search_wrap.search_wrap_3 .search_box .input{
+	padding-right: 80px;
+}
+
+.search_wrap.search_wrap_2 .search_box .btn{
+	left: 0;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+.search_wrap.search_wrap_2 .search_box .input,
+.search_wrap.search_wrap_4 .search_box .input{
+	padding-left: 80px;
+}
+
+.search_wrap.search_wrap_3 .search_box .input,
+.search_wrap.search_wrap_4 .search_box .input,
+.search_wrap.search_wrap_6 .search_box .input{
+	border-radius: 50px;
+}
+
+.search_wrap.search_wrap_3 .search_box .btn{
+	right: 0px;
+	border-radius: 50%;
+}
+
+.search_wrap.search_wrap_4 .search_box .btn{
+	left: 0px;
+	border-radius: 50%;
+}
+
+.search_wrap.search_wrap_6 .search_box .btn,
+.search_wrap.search_wrap_5 .search_box .btn{
+	width: 125px;
+	height: 45px;
+	top: 8px;
+	right: 5px;
+	border-radius: 3px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.search_wrap.search_wrap_6 .search_box .btn{
+	border-radius: 25px;
+}
+
+
+.search_wrap.search_wrap_5 .search_box .input,
+.search_wrap.search_wrap_6 .search_box .input{
+	padding-right: 145px;
+}
+
+
+
+
+    /* button{
+        color: rgb(0, 40, 0);
+    }
+    
+    .textbox{
+
+        border: 3px solid #c9c9c9;
+
+        width: 130px;
+        text-align: center;
+        outline: none;
+        color: rgb(99, 99, 99);
+        border-radius: 5px;
+
+    } */
+
+    /* .forms{
+
+        display: flex;
+
+        justify-content: center;
+        padding: 40px;
+        margin: 50px;
+        margin-left: 100px;
+        margin-right: 100px;
+
+        background: rgb(234, 236, 255);
+       width: 350px;
+        border-radius: 28px;
+    } */
+    
+</style>
+
+</body>
+</html>
