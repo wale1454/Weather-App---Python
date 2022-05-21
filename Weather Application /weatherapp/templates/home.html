@@ -11,7 +11,7 @@
     <title>Weather Application page</title>
 
 </head>
-<body>
+<body class="rtt" >
 
 
     <div class="header">
@@ -36,42 +36,29 @@
 
         <input type="text" name="userinput1" placeholder="Enter a City Name" class="input" >
  
-        <input type="submit" value="Go" class="btn btn_common "  >
+        <input type="submit" value="Go" class="btn btn_common klop "  >
 
 
     </form>
 </div>
 
-
 <br>
 
-<div class="intro" > <b> Here are the weather stats in {{City}} </b>  </div>
+<div class="intro" > <h2>   <b> Here are the weather stats in {{City}} </b>   </h2>  </div>
 
-<br>
-<br>
 
 <div class="bigbox" >
 
-    <h2> Temperature in {{City}} is {{Temp}} degree Celcius  </h2>
-
+    <h3> Temperature in {{City}} is {{Temp}} degree Celcius  </h3>
     <br>
-
     <h3>  Country: {{Country}} </h3>
-
     <br>
-
     <h3>  Weather Forecast Description: {{Description}} </h3>
-
     <br>
-
     <h3> Humidity : {{humidity}} </h3>
-
     <br>
-
     <h3> 
     <img src="http://openweathermap.org/img/w/{{Icon}}.png" alt="Image" style="width:70px"></h3>
-
-   
 
 
 </div>
@@ -79,8 +66,14 @@
 
 
 
-
 <style>
+
+    .rtt{
+
+        background: url("https://images.pexels.com/photos/5745761/pexels-photo-5745761.jpeg?cs=srgb&dl=pexels-ryutaro-tsukata-5745761.jpg&fm=jpg&w=1920&h=1280") no-repeat;
+
+    }
+
 
     *{
         margin: 0;
@@ -88,24 +81,66 @@
         box-sizing: border-box;
         /* font-family: 'Noto Sans KR', sans-serif; */
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    }
+       }
 
     .intro {
         text-align: center;
-        background-color: #fff;
+        /* background-color: #fff; */
         padding: 10px;
 
         border-radius: 85px;
     }
     
     .bigbox{
+
+        /* display: flex; */
+        /* text-align: center; */
+        border: 2px solid rgb(255, 255, 255);
+        padding: 45px;
+        padding-left: 60px;
+        margin-top: 25px;
+        margin-left: 10%;
+        margin-right: 10%;
+
+        color: #fff;
+        /* width: 70%; */
+
+        background-color: rgb(52, 168, 83);
+        background-image: linear-gradient(90deg, rgba(52, 168, 83, 1) 30%, rgba(66, 133, 244, 1) 70%);
+        border-radius: 24px;
+
+        outline: 1px transparent;
+        /* justify-content: space-around; */
+    }
+
+    .bigbox h3{
         text-align: center;
     }
 
+    .klop{
+
+        color: #fff;
+        font-weight: bolder;
+        border:  2px solid #fff;
+    }
+
+    .klop:hover {
+
+        color: #fff;
+        font-weight: bolder;
+        border:  5px solid #fff;
+        }
+
+
+    .input{
+
+        border:  2px solid #fff;
+        }
+
     .header{
-        width: 1000px;
+        width: 50%;
         padding: 20px;
-        background: #7690da;
+        background: #ffffff;
         margin: 25px auto;
         border-radius: 5px;
         text-align: center;
@@ -115,18 +150,19 @@
         font-size: 40px;
         text-transform: capitalize;
         font-weight: 700;
-        color: rgb(255, 255, 255);
+        /* color: #16be06; */
+        color: #174EA6;
     }
 
 
 body{
-	background: #ffda70;
+	background: #fefefe;
 }
 
 .container .input{
 	border: 0;
 	outline: none;
-	color: #8b7d77;
+	color: #ffffff;
 }
 
 .search_wrap{
