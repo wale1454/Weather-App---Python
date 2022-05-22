@@ -29,6 +29,7 @@ You also need to put your API Key in the views.py file.
 
 # Screenshot
 
+![Screenshot 2022-05-22 at 13 14 1](https://user-images.githubusercontent.com/31905212/169694641-4495abcc-ff2f-462f-9995-d01e9cc36ce3.jpg)
 
-<img width="1536" alt="Screenshot 2022-05-22 at 13 12 07" src="https://user-images.githubusercontent.com/31905212/169694575-d235c690-be7e-443a-946c-f41653dbb244.png">
+
 
