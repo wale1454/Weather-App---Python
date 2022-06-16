@@ -14,42 +14,28 @@
 <body class="rtt" >
 
 
-    <div class="header">
-		<p> Weather Application </p>
-	</div>
-    
+    <div class="header"> <p> Weather Application </p>  </div>
     <br>
-
-
-<!-- <div>
-    <form action="/newurl/" method="post" class="forms" > {% csrf_token %}
-
-        <input type="text" name="userinput1" placeholder="Enter a City Name" class="textbox" >
-        <input type="submit" value="Search">
-    </form>
-</div> -->
+    <br>
+    <br>
 
 
 <div class="search_wrap search_wrap_3" >
 
-    <form action="/newurl/" method="post" class="search_box" > {% csrf_token %}
-
-        <input type="text" name="userinput1" placeholder="Enter a City Name" class="input" >
- 
-        <input type="submit" value="Go" class="btn btn_common klop "  >
-
-
+    <form method="POST" class="search_box" > {% csrf_token %}
+        <div class="input"> {{formDisplay.contentInside}} </div>
+        <input type="submit" value="Go" class="btn btn_common klop">
     </form>
+
 </div>
 
 <br>
-
-<div class="intro" > <h2>   <b> Here are the weather stats in {{City}} </b>   </h2>  </div>
+<div class="intro" > <h2>   <b> Here are the weather stats in : {{City}} </b>   </h2>  </div>
 
 
 <div class="bigbox" >
 
-    <h3> Temperature in {{City}} is {{Temp}} degree Celcius  </h3>
+    <h3> Temperature in degree Celcius is : {{Temp}}  </h3>
     <br>
     <h3>  Country: {{Country}} </h3>
     <br>
@@ -65,29 +51,22 @@
 
 
 
-
 <style>
 
     .rtt{
-
         background: url("https://images.pexels.com/photos/5745761/pexels-photo-5745761.jpeg?cs=srgb&dl=pexels-ryutaro-tsukata-5745761.jpg&fm=jpg&w=1920&h=1280") no-repeat;
-
     }
-
 
     *{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        /* font-family: 'Noto Sans KR', sans-serif; */
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
        }
 
     .intro {
         text-align: center;
-        /* background-color: #fff; */
         padding: 10px;
-
         border-radius: 85px;
     }
     
@@ -139,160 +118,128 @@
         font-size: 40px;
         text-transform: capitalize;
         font-weight: 700;
+        /* color: #16be06; */
         color: #174EA6;
     }
 
 
     body{
-	background: #fefefe;
-	}
-
-.container .input{
-	border: 0;
-	outline: none;
-	color: #ffffff;
-}
-
-.search_wrap{
-	width: 500px;
-	margin: 38px auto;
-}
-
-.search_wrap .search_box{
-	position: relative;
-	width: 500px;
-	height: 60px;
-}
-
-.search_wrap .search_box .input{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	padding: 10px 20px;
-	border-radius: 3px;
-	font-size: 18px;
-}
-
-.search_wrap .search_box .btn{
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 60px;
-	height: 100%;
-	background: #7690da;
-	z-index: 1;
-	cursor: pointer;
-}
-
-.search_wrap .search_box .btn:hover{
-	background: #708bd2;	
-}
-
-.search_wrap .search_box .btn.btn_common .fas{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	color: #fff;
-	font-size: 20px;
-}
-
-.search_wrap.search_wrap_1 .search_box .btn{
-	right: 0;
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;
-}
-
-.search_wrap.search_wrap_1 .search_box .input,
-.search_wrap.search_wrap_3 .search_box .input{
-	padding-right: 80px;
-}
-
-.search_wrap.search_wrap_2 .search_box .btn{
-	left: 0;
-	border-top-left-radius: 3px;
-	border-bottom-left-radius: 3px;
-}
-
-.search_wrap.search_wrap_2 .search_box .input,
-.search_wrap.search_wrap_4 .search_box .input{
-	padding-left: 80px;
-}
-
-.search_wrap.search_wrap_3 .search_box .input,
-.search_wrap.search_wrap_4 .search_box .input,
-.search_wrap.search_wrap_6 .search_box .input{
-	border-radius: 50px;
-}
-
-.search_wrap.search_wrap_3 .search_box .btn{
-	right: 0px;
-	border-radius: 50%;
-}
-
-.search_wrap.search_wrap_4 .search_box .btn{
-	left: 0px;
-	border-radius: 50%;
-}
-
-.search_wrap.search_wrap_6 .search_box .btn,
-.search_wrap.search_wrap_5 .search_box .btn{
-	width: 125px;
-	height: 45px;
-	top: 8px;
-	right: 5px;
-	border-radius: 3px;
-	color: #fff;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.search_wrap.search_wrap_6 .search_box .btn{
-	border-radius: 25px;
-}
-
-
-.search_wrap.search_wrap_5 .search_box .input,
-.search_wrap.search_wrap_6 .search_box .input{
-	padding-right: 145px;
-}
-
-
-
-
-    /* button{
-        color: rgb(0, 40, 0);
+        background: #fefefe;
     }
-    
-    .textbox{
 
-        border: 3px solid #c9c9c9;
-
-        width: 130px;
-        text-align: center;
+    .container .input{
+        border: 0;
         outline: none;
-        color: rgb(99, 99, 99);
-        border-radius: 5px;
+        color: #ffffff;
+    }
 
-    } */
+    .search_wrap{
+        width: 500px;
+        margin: 38px auto;
+    }
 
-    /* .forms{
+    .search_wrap .search_box{
+        position: relative;
+        width: 500px;
+        height: 60px;
+    }
 
+    .search_wrap .search_box .input{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 10px 20px;
+        border-radius: 3px;
+        font-size: 18px;
+    }
+
+    .search_wrap .search_box .btn{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60px;
+        height: 100%;
+        background: #7690da;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    .search_wrap .search_box .btn:hover{
+        background: #708bd2;	
+    }
+
+    .search_wrap .search_box .btn.btn_common .fas{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: #fff;
+        font-size: 20px;
+    }
+
+    .search_wrap.search_wrap_1 .search_box .btn{
+        right: 0;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+
+    .search_wrap.search_wrap_1 .search_box .input,
+    .search_wrap.search_wrap_3 .search_box .input{
+        padding-right: 80px;
+    }
+
+    .search_wrap.search_wrap_2 .search_box .btn{
+        left: 0;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+
+    .search_wrap.search_wrap_2 .search_box .input,
+    .search_wrap.search_wrap_4 .search_box .input{
+        padding-left: 80px;
+    }
+
+    .search_wrap.search_wrap_3 .search_box .input,
+    .search_wrap.search_wrap_4 .search_box .input,
+    .search_wrap.search_wrap_6 .search_box .input{
+        border-radius: 50px;
+    }
+
+    .search_wrap.search_wrap_3 .search_box .btn{
+        right: 0px;
+        border-radius: 50%;
+    }
+
+    .search_wrap.search_wrap_4 .search_box .btn{
+        left: 0px;
+        border-radius: 50%;
+    }
+
+    .search_wrap.search_wrap_6 .search_box .btn,
+    .search_wrap.search_wrap_5 .search_box .btn{
+        width: 125px;
+        height: 45px;
+        top: 8px;
+        right: 5px;
+        border-radius: 3px;
+        color: #fff;
         display: flex;
-
+        align-items: center;
         justify-content: center;
-        padding: 40px;
-        margin: 50px;
-        margin-left: 100px;
-        margin-right: 100px;
+    }
 
-        background: rgb(234, 236, 255);
-       width: 350px;
-        border-radius: 28px;
-    } */
+    .search_wrap.search_wrap_6 .search_box .btn{
+        border-radius: 25px;
+    }
+
+
+    .search_wrap.search_wrap_5 .search_box .input,
+    .search_wrap.search_wrap_6 .search_box .input{
+        padding-right: 145px;
+    }
+
     
 </style>
 
