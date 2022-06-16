@@ -17,8 +17,9 @@ from weatherapp.models import CityName
 url = "https://api.openweathermap.org/data/2.5/weather?units=metric"
 
 
+# The inputFunc() funtion receives the input and saves it to the db.
 
-def Joker(request):
+def inputFunc(request):
     ksio = request.POST['userinput1']
 
     newEntry = CityName(contentInside=(ksio))
@@ -56,12 +57,3 @@ def htmlfile(request):
 
 
 
-
-def Homepg(request, *args, **kwargs):
-    return HttpResponse( "Testing 1 2" )
-
-
-
-def Contact(request, *args, **kwargs):
-    return HttpResponse( " Say hello" )
- 

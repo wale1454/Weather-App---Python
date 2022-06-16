@@ -16,14 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from weatherapp.views import Homepg, Contact, htmlfile, Joker
+from weatherapp.views import htmlfile, inputFunc
 # from . import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', htmlfile ),
-    path('contact/', Contact ),
-    path('htmlfile/', Homepg ),
-    path('newurl/', Joker ),
+    path('newurl/', inputFunc ),
 ]
